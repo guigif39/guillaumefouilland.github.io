@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -400,22 +399,15 @@
       line-height: 1.4;
     }
 
-    .footer-right {
-      display: flex;
-      flex-direction: column;
-      gap: 0.4rem;
-      align-items: flex-start;
-    }
-
-    @media (min-width: 700px) {
-      .footer-right {
-        align-items: flex-end;
-      }
-    }
-
-    .visit-counter {
+    /* Compteur de vues */
+    .view-counter {
       font-size: 0.8rem;
       color: #9ca3af;
+      margin-top: 0.3rem;
+    }
+
+    .view-counter strong {
+      color: #e5e7eb;
     }
   </style>
 </head>
@@ -768,47 +760,42 @@
   <!-- Pied de page -->
   <footer>
     <div class="container">
-      <div class="disclaimer">
-        Le magnétisme est une pratique d'accompagnement du mieux-être, complémentaire
-        à la médecine. Il ne remplace en aucun cas une consultation médicale, un diagnostic ni un traitement
-        prescrit par un professionnel de santé. En cas de problème de santé, consultez votre médecin.
+      <div>
+        <div class="disclaimer">
+          Le magnétisme est une pratique d'accompagnement du mieux-être, complémentaire
+          à la médecine. Il ne remplace en aucun cas une consultation médicale, un diagnostic ni un traitement
+          prescrit par un professionnel de santé. En cas de problème de santé, consultez votre médecin.
+        </div>
+        <div class="view-counter">
+          Cette page a été vue <strong><span id="visits">...</span></strong> fois.
+        </div>
       </div>
-      <div class="footer-right">
-        <div>
-          &copy; <span id="year"></span> Guillaume Fouilland – Magnétiseur à Arbois
-        </div>
-        <div class="visit-counter">
-          Nombre de visites sur cette page (sur ce navigateur) : <span id="visit-count">0</span>
-        </div>
+      <div>
+        &copy; <span id="year"></span> Guillaume Fouilland – Magnétiseur à Arbois
       </div>
     </div>
     <script>
       // Met l'année à jour automatiquement
       document.getElementById('year').textContent = new Date().getFullYear();
 
-      // Compteur de visites (par navigateur, via localStorage)
-      (function() {
-        try {
-          var count = localStorage.getItem('gf_magnetiseur_visit_count');
-          if (!count) {
-            count = 0;
-          } else {
-            count = parseInt(count, 10) || 0;
+      // Compteur de vues simple avec CountAPI
+      // "guillaumefouilland.github.io" = namespace, "magnetiseur-page" = clé
+      fetch('https://api.countapi.xyz/hit/guillaumefouilland.github.io/magnetiseur-page')
+        .then(function (response) {
+          return response.json();
+        })
+        .then(function (data) {
+          var span = document.getElementById('visits');
+          if (span && data && typeof data.value !== 'undefined') {
+            span.textContent = data.value;
+          } else if (span) {
+            span.textContent = '?';
           }
-          count += 1;
-          localStorage.setItem('gf_magnetiseur_visit_count', count.toString());
-          var el = document.getElementById('visit-count');
-          if (el) {
-            el.textContent = count;
-          }
-        } catch (e) {
-          // Si localStorage n'est pas disponible, on n'affiche rien de spécial
-          var elFallback = document.getElementById('visit-count');
-          if (elFallback) {
-            elFallback.textContent = 'N/A';
-          }
-        }
-      })();
+        })
+        .catch(function () {
+          var span = document.getElementById('visits');
+          if (span) span.textContent = '?';
+        });
     </script>
   </footer>
 
