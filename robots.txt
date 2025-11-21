@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Emplacement du sitemap
+Sitemap: https://guigif39.github.io/guillaumefouilland.github.io/sitemap.xml
