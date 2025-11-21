@@ -1,0 +1,816 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Guillaume Fouilland – Magnétiseur à Arbois</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Guillaume Fouilland, magnétiseur à Arbois. Séances de magnétisme à distance et à domicile, accompagnement du mieux-être et cours d'auto-guérison.">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+      color: #111827;
+      background: #f3f4f6;
+    }
+
+    header {
+      background: linear-gradient(135deg, #2563eb, #22c1c3);
+      color: #fff;
+      padding: 1.2rem 1.5rem;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1.5rem;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .logo {
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+
+    .nav-links a {
+      margin-left: 1rem;
+      text-decoration: none;
+      color: #fff;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* Hero */
+    .hero {
+      background: radial-gradient(circle at top, #e0f2fe, #f3f4f6);
+      padding: 3rem 1.5rem 2.5rem;
+    }
+
+    .hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 2rem;
+      align-items: center;
+    }
+
+    @media (max-width: 800px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .hero h1 {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+      color: #0f172a;
+    }
+
+    .hero p {
+      margin-bottom: 1.2rem;
+      font-size: 1rem;
+    }
+
+    .hero-highlight {
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 0.3rem 0.8rem;
+      border-radius: 999px;
+      background: rgba(37,99,235,0.1);
+      color: #1d4ed8;
+      font-size: 0.8rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      padding: 0.8rem 1.4rem;
+      border-radius: 999px;
+      background: #2563eb;
+      color: #fff;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.95rem;
+      box-shadow: 0 10px 20px rgba(37, 99, 235, 0.25);
+    }
+
+    .btn-primary:hover {
+      opacity: 0.9;
+      transform: translateY(-1px);
+    }
+
+    .hero-card {
+      background: #ffffff;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      box-shadow: 0 16px 30px rgba(15, 23, 42, 0.12);
+      font-size: 0.95rem;
+      border: 1px solid #e5e7eb;
+    }
+
+    .hero-card h2 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-card ul {
+      list-style: none;
+      margin-top: 0.5rem;
+    }
+
+    .hero-card li {
+      margin-bottom: 0.4rem;
+    }
+
+    .hero-note {
+      margin-top: 0.8rem;
+      font-size: 0.85rem;
+      color: #6b7280;
+    }
+
+    /* Sections */
+    section {
+      padding: 2.5rem 1.5rem;
+    }
+
+    section:nth-of-type(even) {
+      background: #ffffff;
+    }
+
+    section:nth-of-type(odd) {
+      background: #f9fafb;
+    }
+
+    section h2 {
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+      text-align: center;
+      color: #0f172a;
+    }
+
+    section p.section-intro {
+      max-width: 700px;
+      margin: 0 auto 1.8rem;
+      text-align: center;
+      font-size: 0.98rem;
+      color: #4b5563;
+    }
+
+    .grid-2 {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 2rem;
+    }
+
+    @media (max-width: 800px) {
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      box-shadow: 0 8px 18px rgba(15, 23, 42, 0.06);
+      font-size: 0.95rem;
+      border: 1px solid #e5e7eb;
+    }
+
+    .card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.7rem;
+      color: #0f172a;
+    }
+
+    .card ul {
+      padding-left: 1.2rem;
+      margin-top: 0.5rem;
+    }
+
+    .card li {
+      margin-bottom: 0.4rem;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.6rem;
+    }
+
+    .tag {
+      font-size: 0.8rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      background: #eff6ff;
+      color: #1d4ed8;
+    }
+
+    /* Témoignages */
+    .testimonials {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .testimonial {
+      background: #ffffff;
+      border-radius: 1rem;
+      padding: 1.2rem 1.4rem;
+      box-shadow: 0 8px 18px rgba(15, 23, 42, 0.05);
+      font-size: 0.95rem;
+      font-style: italic;
+      border: 1px solid #e5e7eb;
+    }
+
+    .testimonial span {
+      display: block;
+      margin-top: 0.7rem;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: #6b7280;
+    }
+
+    /* Contact & réservation */
+    .contact-wrapper {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 2rem;
+    }
+
+    @media (max-width: 900px) {
+      .contact-wrapper {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    form {
+      background: #ffffff;
+      padding: 1.5rem;
+      border-radius: 1rem;
+      box-shadow: 0 8px 18px rgba(15, 23, 42, 0.05);
+      border: 1px solid #e5e7eb;
+    }
+
+    form h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.8rem;
+      color: #0f172a;
+    }
+
+    label {
+      display: block;
+      font-size: 0.9rem;
+      margin-bottom: 0.3rem;
+      margin-top: 0.8rem;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 0.6rem 0.8rem;
+      border-radius: 0.5rem;
+      border: 1px solid #d1d5db;
+      font-size: 0.95rem;
+      font-family: inherit;
+      background: #f9fafb;
+    }
+
+    textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    .helper-text {
+      font-size: 0.8rem;
+      color: #6b7280;
+      margin-top: 0.2rem;
+    }
+
+    .contact-info {
+      font-size: 0.95rem;
+    }
+
+    .contact-info p {
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-info strong {
+      color: #0f172a;
+    }
+
+    .map-card {
+      margin-top: 1rem;
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 8px 18px rgba(15, 23, 42, 0.1);
+      border: 1px solid #e5e7eb;
+    }
+
+    .map-card iframe {
+      border: 0;
+      width: 100%;
+      height: 220px;
+    }
+
+    /* FAQ */
+    .faq {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      background: #ffffff;
+      border-radius: 0.9rem;
+      padding: 1rem 1.2rem;
+      margin-bottom: 0.8rem;
+      box-shadow: 0 4px 10px rgba(15, 23, 42, 0.04);
+      border: 1px solid #e5e7eb;
+    }
+
+    .faq-question {
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+      color: #0f172a;
+    }
+
+    .faq-answer {
+      font-size: 0.93rem;
+      color: #4b5563;
+    }
+
+    footer {
+      background: #0f172a;
+      color: #e5e7eb;
+      padding: 1.5rem;
+      font-size: 0.8rem;
+    }
+
+    footer .container {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    @media (min-width: 700px) {
+      footer .container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+
+    .disclaimer {
+      max-width: 650px;
+      line-height: 1.4;
+    }
+
+    .footer-right {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      align-items: flex-start;
+    }
+
+    @media (min-width: 700px) {
+      .footer-right {
+        align-items: flex-end;
+      }
+    }
+
+    .visit-counter {
+      font-size: 0.8rem;
+      color: #9ca3af;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- En-tête -->
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">Guillaume Fouilland – Magnétiseur</div>
+        <div class="nav-links">
+          <a href="#accueil">Accueil</a>
+          <a href="#apropos">À propos</a>
+          <a href="#seances">Séances</a>
+          <a href="#abonnements">Abonnements</a>
+          <a href="#faq">FAQ</a>
+          <a href="#temoignages">Avis</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="accueil">
+    <div class="hero-inner">
+      <div>
+        <span class="badge">Séances à distance & à domicile</span>
+        <h1>Magnétiseur à Arbois – accompagnement par l'énergie</h1>
+        <p class="hero-highlight">
+          Séances de magnétisme à distance ou à mon domicile, pour favoriser détente, apaisement et mieux-être.
+        </p>
+        <p>
+          Je m'appelle <strong>Guillaume Fouilland</strong>, magnétiseur à <strong>Arbois</strong>.
+          J'accompagne les personnes qui souhaitent relâcher les tensions, se recentrer
+          et retrouver plus de confort dans leur quotidien.
+        </p>
+        <p>
+          Les séances se font <strong>à distance</strong> ou <strong>chez moi, à Arbois</strong>, sur rendez-vous uniquement.
+        </p>
+        <a href="#contact" class="btn-primary">Demander un rendez-vous</a>
+        <p class="hero-note">
+          Créneaux possibles&nbsp;: le matin entre 8h et 10h30, et l'après-midi à partir de 13h30
+          (en fonction de mon planning d'usine).
+        </p>
+      </div>
+
+      <div class="hero-card">
+        <h2>Informations pratiques</h2>
+        <ul>
+          <li><strong>Nom :</strong> Guillaume Fouilland</li>
+          <li><strong>Adresse :</strong> 41 rue de Larney, 39600 Arbois</li>
+          <li><strong>Séances :</strong> à distance et à mon domicile</li>
+          <li><strong>Téléphone :</strong> 06 77 67 34 45</li>
+          <li><strong>Email :</strong> fouillandgui@yahoo.fr</li>
+          <li><strong>Horaires :</strong> sur rendez-vous</li>
+        </ul>
+        <p class="hero-note">
+          N'interrompez jamais un traitement médical sans l'avis de votre médecin. Le magnétisme est un complément.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- À propos -->
+  <section id="apropos">
+    <div class="container">
+      <h2>À propos de moi</h2>
+      <p class="section-intro">
+        Le magnétisme est une approche énergétique traditionnelle qui vise à harmoniser les flux d'énergie du corps
+        afin de soutenir le processus naturel d'autorégulation et de mieux-être.
+      </p>
+      <div class="grid-2">
+        <div class="card">
+          <h3>Qui je suis</h3>
+          <p>
+            Sensible aux énergies depuis de nombreuses années, j'ai choisi de mettre le magnétisme au service des personnes
+            qui cherchent à retrouver du calme intérieur, du recul et du confort dans leur vie quotidienne.
+          </p>
+          <p>
+            Mon approche est <strong>simple, humaine et bienveillante</strong>. Chaque séance est personnalisée en fonction
+            de ce que vous vivez sur le moment, dans le respect de votre rythme.
+          </p>
+          <div class="tag-list">
+            <span class="tag">Écoute</span>
+            <span class="tag">Bienveillance</span>
+            <span class="tag">Simplicité</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Pour qui&nbsp;?</h3>
+          <p>Les séances de magnétisme peuvent accompagner notamment&nbsp;:</p>
+          <ul>
+            <li>Les périodes de stress, de fatigue ou de surcharge mentale</li>
+            <li>Les tensions émotionnelles et les phases de changement</li>
+            <li>Le besoin de détente profonde et de recentrage</li>
+            <li>Un travail global sur l'équilibre énergétique</li>
+          </ul>
+          <p style="margin-top:0.6rem;">
+            Le magnétisme ne remplace en aucun cas un suivi médical et ne se substitue pas à un traitement prescrit.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Séances -->
+  <section id="seances">
+    <div class="container">
+      <h2>Les séances de magnétisme</h2>
+      <p class="section-intro">
+        Chaque séance est unique et adaptée à votre situation. Nous commençons par un échange pour comprendre vos besoins,
+        puis je travaille sur votre équilibre énergétique par imposition des mains ou à distance.
+      </p>
+      <div class="grid-2">
+        <div class="card">
+          <h3>Déroulement d'une séance</h3>
+          <ul>
+            <li>Accueil et échange sur vos attentes du moment</li>
+            <li>Installation confortable (assis ou allongé, habillé)</li>
+            <li>Travail énergétique dans le calme</li>
+            <li>Temps de retour et partage des ressentis</li>
+          </ul>
+          <p style="margin-top:0.6rem;">
+            La séance se déroule dans un cadre simple, respectueux et confidentiel, à distance ou à mon domicile.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Tarifs</h3>
+          <ul>
+            <li>Séance de 30 minutes : <strong>30 €</strong></li>
+            <li>Séance d'1 heure : <strong>50 €</strong></li>
+          </ul>
+          <p style="margin-top:0.6rem;">
+            Les séances peuvent se faire à distance ou chez moi, à Arbois.  
+            Le règlement s'effectue selon les modalités convenues lors de la prise de rendez-vous.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Abonnements & auto-guérison -->
+  <section id="abonnements">
+    <div class="container">
+      <h2>Abonnements & cours d'auto-guérison</h2>
+      <p class="section-intro">
+        Pour les personnes qui souhaitent un suivi plus régulier, je propose des formules d'abonnement
+        incluant des séances de magnétisme et des cours d'auto-guérison.
+      </p>
+      <div class="grid-2">
+        <div class="card">
+          <h3>Accompagnement dans la durée</h3>
+          <p>
+            L'abonnement permet de s'inscrire dans une démarche régulière, avec un rythme adapté à vos besoins&nbsp;:
+            suivi énergétique, accompagnement émotionnel et temps pour vous.
+          </p>
+          <p>
+            Nous définissons ensemble la fréquence des séances (par exemple 2 ou 4 séances par mois)
+            en fonction de votre situation et de vos objectifs.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Cours d'auto-guérison</h3>
+          <p>
+            Les formules d'abonnement peuvent inclure des <strong>cours d'auto-guérison</strong>&nbsp;:
+          </p>
+          <ul>
+            <li>Exercices simples à pratiquer chez vous</li>
+            <li>Conseils pour mieux écouter votre corps et vos ressentis</li>
+            <li>Outils pour participer vous-même à votre mieux-être</li>
+          </ul>
+          <p style="margin-top:0.6rem;">
+            Les détails des formules et leurs tarifs sont définis ensemble. N'hésitez pas à me contacter pour en parler.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="container">
+      <h2>Questions fréquentes (FAQ)</h2>
+      <p class="section-intro">
+        Voici quelques réponses aux questions que l'on me pose souvent.  
+        Si vous avez un doute, vous pouvez toujours me contacter directement.
+      </p>
+      <div class="faq">
+        <div class="faq-item">
+          <div class="faq-question">Le magnétisme remplace-t-il la médecine&nbsp;?</div>
+          <div class="faq-answer">
+            Non. Le magnétisme est un accompagnement du mieux-être, complémentaire à la médecine.
+            Il ne remplace jamais un diagnostic, une consultation ni un traitement médical.
+            En cas de problème de santé, consultez votre médecin.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Comment se passe une séance à distance&nbsp;?</div>
+          <div class="faq-answer">
+            Nous prenons d'abord un contact (téléphone, message ou visio) pour définir votre demande.
+            Nous convenons ensuite d'un créneau. Le jour J, vous vous installez dans un endroit calme,
+            et je réalise le travail énergétique à distance. Un temps d'échange peut suivre pour partager les ressentis.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Combien de séances sont nécessaires&nbsp;?</div>
+          <div class="faq-answer">
+            Cela dépend de chaque personne et de chaque situation. Parfois une séance suffit à apporter un mieux-être,
+            parfois un accompagnement sur plusieurs séances est plus adapté. Vous restez toujours libre d'arrêter ou de poursuivre.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Puis-je arrêter mon traitement médical si je me sens mieux&nbsp;?</div>
+          <div class="faq-answer">
+            Non. Seul votre médecin peut décider de modifier ou d'arrêter un traitement.
+            Même si vous observez une amélioration, il est important de continuer votre suivi médical.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Travaillez-vous avec les enfants ou les adolescents&nbsp;?</div>
+          <div class="faq-answer">
+            C'est possible dans certains cas, avec l'accord et la présence d'un parent ou responsable légal.
+            Nous en parlons toujours ensemble avant de décider d'une séance.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Comment fonctionnent les abonnements et l'auto-guérison&nbsp;?</div>
+          <div class="faq-answer">
+            Les abonnements s'adressent aux personnes qui souhaitent un suivi régulier.
+            Ils peuvent inclure un certain nombre de séances par mois et des exercices d'auto-guérison à pratiquer
+            entre les séances. Le but n'est pas de vous rendre dépendant, mais au contraire de vous donner des outils
+            pour devenir plus autonome.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Comment se passent les rendez-vous avec vos horaires d'usine&nbsp;?</div>
+          <div class="faq-answer">
+            J'organise les séances en dehors de mes horaires d'usine. Les créneaux possibles sont en général
+            le matin entre 8h et 10h30, et l'après-midi à partir de 13h30, selon la semaine.
+            Lors de votre demande de rendez-vous, nous confirmons ensemble l'horaire le plus adapté.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Témoignages -->
+  <section id="temoignages">
+    <div class="container">
+      <h2>Avis de personnes accompagnées</h2>
+      <p class="section-intro">
+        Voici quelques exemples de retours que peuvent exprimer les personnes après une séance.
+        Vous pourrez adapter ces textes avec vos propres témoignages.
+      </p>
+      <div class="testimonials">
+        <div class="testimonial">
+          « J'ai ressenti une grande détente dès la première séance. J'ai mieux dormi les jours suivants. »
+          <span>— M.C.</span>
+        </div>
+        <div class="testimonial">
+          « Je me suis senti plus calme et recentré pendant plusieurs jours. »
+          <span>— L.B.</span>
+        </div>
+        <div class="testimonial">
+          « Les explications de Guillaume sur l'auto-guérison m'ont aidé à mieux comprendre mes émotions. »
+          <span>— J.R.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact & réservation -->
+  <section id="contact">
+    <div class="container">
+      <h2>Me contacter & demander un rendez-vous</h2>
+      <p class="section-intro">
+        Pour toute question ou pour demander un rendez-vous, vous pouvez utiliser le formulaire ci-dessous
+        ou me joindre directement par téléphone ou par email.
+      </p>
+      <div class="contact-wrapper">
+
+        <!-- Formulaire de "réservation" (demande de créneau) -->
+        <form action="mailto:fouillandgui@yahoo.fr" method="post" enctype="text/plain">
+          <h3>Demande de rendez-vous</h3>
+
+          <label for="nom">Nom *</label>
+          <input type="text" id="nom" name="Nom" required>
+
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="Email" required>
+
+          <label for="telephone">Téléphone *</label>
+          <input type="tel" id="telephone" name="Téléphone" required>
+
+          <label for="type-seance">Type de séance *</label>
+          <select id="type-seance" name="Type de séance" required>
+            <option value="">Sélectionnez...</option>
+            <option value="30 min - 30€">Séance 30 minutes – 30 €</option>
+            <option value="60 min - 50€">Séance 1 heure – 50 €</option>
+          </select>
+
+          <label for="date">Date souhaitée *</label>
+          <input type="date" id="date" name="Date souhaitée" required>
+
+          <label for="heure">Créneau souhaité *</label>
+          <input type="text" id="heure" name="Créneau souhaité" placeholder="Ex. entre 8h et 10h30 ou à partir de 13h30" required>
+          <p class="helper-text">
+            Exemple&nbsp;: « Lundi entre 8h et 9h » ou « Après-midi à partir de 14h ».  
+            Je vous confirmerai le créneau exact selon mon planning.
+          </p>
+
+          <label for="message">Message (facultatif)</label>
+          <textarea id="message" name="Message" placeholder="Précisez votre besoin, vos questions, etc."></textarea>
+
+          <button type="submit" class="btn-primary" style="margin-top:1rem;">Envoyer la demande</button>
+          <p class="helper-text" style="margin-top:0.4rem;">
+            En cliquant sur « Envoyer », votre logiciel de messagerie peut s'ouvrir avec un email pré-rempli.
+          </p>
+        </form>
+
+        <!-- Infos + Google Maps -->
+        <div class="contact-info">
+          <p><strong>Guillaume Fouilland</strong></p>
+          <p><strong>Adresse :</strong> 41 rue de Larney, 39600 Arbois</p>
+          <p><strong>Séances :</strong> à distance et à mon domicile</p>
+          <p><strong>Téléphone :</strong> 06 77 67 34 45</p>
+          <p><strong>Email :</strong> fouillandgui@yahoo.fr</p>
+          <p style="margin-top:0.8rem;">
+            <strong>Créneaux habituels :</strong><br>
+            Matin : 8h – 10h30 (selon la semaine)<br>
+            Après-midi : à partir de 13h30 (selon la semaine et mes horaires d'usine).
+          </p>
+          <div class="map-card">
+            <!-- Carte Google Maps intégrée -->
+            <iframe
+              src="https://www.google.com/maps?q=41+rue+de+Larney,+39600+Arbois,+France&output=embed"
+              allowfullscreen=""
+              loading="lazy">
+            </iframe>
+          </div>
+          <p class="helper-text" style="margin-top:0.6rem;">
+            L'adresse exacte et les informations pratiques peuvent être précisées lors de la prise de rendez-vous.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pied de page -->
+  <footer>
+    <div class="container">
+      <div class="disclaimer">
+        Le magnétisme est une pratique d'accompagnement du mieux-être, complémentaire
+        à la médecine. Il ne remplace en aucun cas une consultation médicale, un diagnostic ni un traitement
+        prescrit par un professionnel de santé. En cas de problème de santé, consultez votre médecin.
+      </div>
+      <div class="footer-right">
+        <div>
+          &copy; <span id="year"></span> Guillaume Fouilland – Magnétiseur à Arbois
+        </div>
+        <div class="visit-counter">
+          Nombre de visites sur cette page (sur ce navigateur) : <span id="visit-count">0</span>
+        </div>
+      </div>
+    </div>
+    <script>
+      // Met l'année à jour automatiquement
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      // Compteur de visites (par navigateur, via localStorage)
+      (function() {
+        try {
+          var count = localStorage.getItem('gf_magnetiseur_visit_count');
+          if (!count) {
+            count = 0;
+          } else {
+            count = parseInt(count, 10) || 0;
+          }
+          count += 1;
+          localStorage.setItem('gf_magnetiseur_visit_count', count.toString());
+          var el = document.getElementById('visit-count');
+          if (el) {
+            el.textContent = count;
+          }
+        } catch (e) {
+          // Si localStorage n'est pas disponible, on n'affiche rien de spécial
+          var elFallback = document.getElementById('visit-count');
+          if (elFallback) {
+            elFallback.textContent = 'N/A';
+          }
+        }
+      })();
+    </script>
+  </footer>
+
+</body>
+</html>
