@@ -436,6 +436,49 @@
     .view-counter strong {
       color: #e5e7eb;
     }
+  /* Bouton flottant chat Énergie Universelle */
+  .eu-chat-fab {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: #2563eb;
+    color: #fff;
+    display: grid;
+    place-items: center;
+    box-shadow: 0 8px 30px rgba(0,0,0,.2);
+    cursor: pointer;
+    z-index: 9999;
+    font: 700 20px/1 system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  }
+
+  .eu-chat-fab:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+  }
+
+  .eu-chat-modal {
+    position: fixed;
+    right: 20px;
+    bottom: 90px;
+    width: 400px;
+    max-width: 95vw;
+    height: 620px;
+    max-height: 80vh;
+    border: 0;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0,0,0,.2);
+    display: none;
+    z-index: 9999;
+    background: #fff;
+  }
+
+  .eu-chat-modal.open {
+    display: block;
+  }
+
   </style>
 </head>
 <body>
@@ -894,9 +937,33 @@ me contacter pour en parler.
         });
     </script>
   </footer>
+<!-- Bouton flottant : Énergie Universelle – Dialogue intérieur -->
+<div class="eu-chat-fab" id="euChatFab" title="Parler avec l'Énergie Universelle">
+  💬
+</div>
+
+<iframe
+  id="euChatFrame"
+  class="eu-chat-modal"
+  src="https://chatgpt.com/g/g-69203ce639c4819189ce93e92a4b0d33-energie-universelle-dialogue-interieur?embed=1"
+  title="Énergie Universelle – Dialogue intérieur"
+  allow="microphone; clipboard-write">
+</iframe>
+
+<script>
+  const euFab = document.getElementById('euChatFab');
+  const euFrame = document.getElementById('euChatFrame');
+
+  if (euFab && euFrame) {
+    euFab.addEventListener('click', () => {
+      euFrame.classList.toggle('open');
+    });
+  }
+</script>
 
 </body>
 </html>
+
 
 
 
