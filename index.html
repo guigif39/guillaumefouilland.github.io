@@ -478,6 +478,27 @@
   .eu-chat-modal.open {
     display: block;
   }
+/* Bouton flottant chat IA */
+.eu-chat-fab {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #2563eb;
+  color: #fff;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 8px 30px rgba(0,0,0,.2);
+  cursor: pointer;
+  z-index: 9999;
+  font: 700 22px/1 system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.eu-chat-fab span {
+  font-size: 24px;
+}
 
   </style>
 </head>
@@ -960,9 +981,27 @@ me contacter pour en parler.
     });
   }
 </script>
+  <!-- Bouton flottant vers l'agent IA Énergie Universelle -->
+  <div class="eu-chat-fab" id="euChatFab" title="Dialogue avec l'Énergie Universelle">
+    <span>✨</span>
+  </div>
+
+  <script>
+    // Quand on clique sur le bouton, on ouvre ton agent IA dans un nouvel onglet
+    document.getElementById('euChatFab').addEventListener('click', function () {
+      window.open(
+        'https://chatgpt.com/g/g-69203ce639c4819189ce93e92a4b0d33-energie-universelle-dialogue-interieur',
+        '_blank',
+        'noopener'
+      );
+    });
+  </script>
+</body>
+</html>
 
 </body>
 </html>
+
 
 
 
